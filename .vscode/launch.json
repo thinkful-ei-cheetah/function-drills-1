@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/fn_drills_2.js"
+            "program": "${workspaceFolder}/higher_order_function_drills.js"
         }
     ]
 }
