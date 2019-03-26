@@ -1,8 +1,13 @@
 'use strict';
 
-function createGreeting(){
-  return `Hi, my name is Michael and I'm 29 years old.`;
+function createGreeting(name, age){
+  return `Hi, my name is ${name} and I'm ${age} years old.  ` + 
+         `I was born in the year ${getYearOfBirth(age)}.`;
 }
 
-let result = createGreeting();
+function getYearOfBirth(age){
+  return 2019 - age
+}
+
+let result = createGreeting("Michael", 29);
 console.log(result);
