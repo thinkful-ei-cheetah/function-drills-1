@@ -1,14 +1,14 @@
 'use strict';
 
 function jediName(firstName, lastName) {
-  return `${lastName.slice(0,3)}${firstName.slice(0,2)}`
+  return `${lastName.slice(0,3)}${firstName.slice(0,2)}`;
 }
 
 // jediName("Beyonce", "Knowles")
 
 function beyond(num) {
   if (num === Infinity || num === -Infinity) {
-    console.log('And beyond')
+    console.log('And beyond');
   } else if (num > 0 && num < Infinity) {
     console.log('To infinity');
   } else if (num < 0 && num > -Infinity) {
@@ -32,9 +32,9 @@ function decode(word) {
 
 function decodeMessage(sentence) {
   return sentence
-    .split(" ")
+    .split(' ')
     .map(decode)
-    .join("")
+    .join('');
 }
 
 // let secretMessage = 'craft block argon meter bells brown croon droop';
@@ -70,6 +70,34 @@ function daysInMonth(month, leapYear=false) {
 
 // console.log(daysInMonth('March'));
 
+function rockPaperScissors(index) {
+  if (index < 1 && index > 3) {
+    throw new Error('Argument must be between 1-3');
+  }
+  const options = ['rock', 'paper', 'scissors'];
+  const randomIndex = Math.floor(Math.random() * 3) + 1;
+  const computerMove = options[randomIndex-1];
+  const myMove = options[index-1];
+  let result;
 
+  if (computerMove === 'rock' && myMove === 'scissors') {
+    result = 'lose';
+  } else if (computerMove === 'rock' && myMove === 'paper') {
+    result = 'win';
+  } else if (computerMove === 'scissors' && myMove === 'paper') {
+    result = 'lose';
+  } else if (computerMove === 'scissors' && myMove === 'rock') {
+    result = 'win';
+  } else if (computerMove === 'paper' && myMove === 'rock') {
+    result = 'lose';
+  } else if (computerMove === 'paper' && myMove === 'scissors') {
+    result = 'win';
+  } else {
+    result = 'tie';
+  }
 
+  return `The computer chose ${computerMove}.  You chose ${myMove}.  You ${result}.`
+}
+
+// console.log(rockPaperScissors(3));
 
