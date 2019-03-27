@@ -66,5 +66,26 @@ function hazardWarningCreator(typeOfWarning) {
 // console.log(hailWarning('North B St and Page'));
 // console.log(hailWarning('Tampa, Fl'));
 
+const turtleMoves = [
+  [0, 0], 
+  [0, 5], 
+  [-1, -3], 
+  [-3, 1], 
+  [2, -4], 
+  [3, 2]
+];
+
+const noBackwardOrRightMoves = turtleMoves.filter(move => move[0] >= 0 && move[1] >= 0);
+// console.log(noBackwardOrRightMoves);
+
+const totalMoves = noBackwardOrRightMoves.map(move => [move[0] + move[1]]);
+// console.log(totalMoves);
+
+// totalMoves.forEach((move, i) => {
+//   console.log(`Move ${i+1}: ${move[0]} steps`);
+// });
+
+
+
 
 
