@@ -85,6 +85,22 @@ const totalMoves = noBackwardOrRightMoves.map(move => [move[0] + move[1]]);
 //   console.log(`Move ${i+1}: ${move[0]} steps`);
 // });
 
+const encryptedMessage = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+
+function decodeMessage(message) {
+  const words = message.split(' ');
+  return words
+    .reduce((acc, word) => {
+      if (word.length === 3) {
+        acc += ' '; 
+      } else {
+        acc += word.charAt(word.length-1).toUpperCase();
+      }
+      return acc;
+    }, '');
+}
+
+// console.log(decodeMessage(encryptedMessage));
 
 
 
