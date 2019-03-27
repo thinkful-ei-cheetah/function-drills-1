@@ -46,5 +46,25 @@ const filteredNames = filter(myNames, function(name) {
 // BONUS, using arrow function
 // console.log(filter(myNames, (name) => name[0] === 'R'));
 
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+
+  return function (location) {
+    warningCounter++;
+    return `
+      DANGER! There is a ${typeOfWarning} hazard at ${location}.
+      The ${typeOfWarning} hazard has triggered ${warningCounter} ${warningCounter > 1 ? 'times' : 'time'} today!
+    `;
+  };
+}
+
+// const rocksWarning = hazardWarningCreator('Rocks on the Road');
+// console.log(rocksWarning('Main St and Pacific Ave'));
+// console.log(rocksWarning('Gulf and Bay to Bay Blvd'));
+
+// const hailWarning = hazardWarningCreator('Hail');
+// console.log(hailWarning('North B St and Page'));
+// console.log(hailWarning('Tampa, Fl'));
+
 
 
